@@ -1,0 +1,65 @@
+.message-index
+  %header
+    .title
+      %h2 電子掲示板
+  %hr
+    .nav
+      = link_to('[ホームページ]', "#")
+  %hr
+    .main-contents
+      .input-area
+        = form_for(@message) do |f|
+          .input-area__item
+            = f.label :name, "お名前", class: "input-area__item__label"
+            = f.text_field :name, class: "input-area__item__text-box"
+          .input-area__item
+            = f.label :email, "Eメール", class: "input-area__item__label"
+            = f.text_field :text, class: "input-area__item__text-box"
+          .input-area__item
+            = f.label :title, "タイトル", class: "input-area__item__label"
+            = f.text_field :title, class: "input-area__item__text-box"
+          .input-area__item
+            = f.label :text, "メッセージ", class: "input-area__item__label-message"
+            = f.text_area :text, class: "input-area__item__text-area"
+          .input-area__item
+            = f.label :url, "参照URL", class: "input-area__item__label"
+            = f.text_field :url, value: "http://", class: "input-area__item__text-box"
+          .input-area__item
+            = f.label :password_digest, "削除キー", class: "input-area__item__label"
+            = f.text_field :password_digest, class: "input-area__item__text-box input-area__item__pass"
+          .input-area__item
+            .input-area__item__desc.input-area__item__label.input-area__item__label-color
+              文字色
+            .input-area__item__radio
+              = f.radio_button :color, 1
+              = f.label :color, "■", {data: {color: "color-black"}}
+              = f.radio_button :color, 2
+              = f.label :color, "■", {data: {color: "color-gray"}}
+              = f.radio_button :color, 3
+              = f.label :color, "■", {data: {color: "color-red"}}
+              = f.radio_button :color, 4
+              = f.label :color, "■", {data: {color: "color-yellow"}}
+              = f.radio_button :color, 5
+              = f.label :color, "■", {data: {color: "color-blue"}}
+              = f.radio_button :color, 6
+              = f.label :color, "■", {data: {color: "color-orange"}}
+          .input-area__item
+            = f.submit "投稿する", class: "form-button"
+          .input-area__item
+            %button.form-button リセット
+  %hr
+    .pages
+      = paginate @messages
+  %hr
+    .message-area
+      - if @messages.present?
+        - @messages.each do |message|
+          .message
+            .message-header
+              [#{message.id}] #{message.title}　名前: #{message.name}　投稿日: #{message.created_at.strftime("%Y年%m月%d日(%a) %H:%M")}
+            .message-content
+              = message.text
+          %hr
+      .message-area__delete-key
+      
+    

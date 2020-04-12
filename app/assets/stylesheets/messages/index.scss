@@ -1,0 +1,100 @@
+.message-index {
+  font-family: 'ＭＳ Ｐ明朝','MS PMincho','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+  background-color: floralwhite;
+  padding: 12px 12px;
+
+  hr {
+    border-top: 1px ridge #aaa;
+  }
+
+  .title {
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  
+  .nav {
+    text-align: center;
+  }
+
+  .main-contents {
+    padding-bottom: 12px; 
+    [data-color="color-black"] {
+      color: black;
+    }
+    [data-color="color-gray"] {
+      color: gray;
+    }
+    [data-color="color-red"] {
+      color: red;
+    }
+    [data-color="color-yellow"] {
+      color: yellow;
+    }
+    [data-color="color-blue"] {
+      color: blue;
+    }
+    [data-color="color-orange"] {
+      color: orange;
+    }
+    .input-area {
+      margin: 30px 0;
+      &__item {
+        margin: 4px 4px; 
+        &__label {
+          display: inline-block;
+          width: 100px;
+          font-weight: 600;
+        }
+        &__label-message {
+          display: block;
+          width: 100px;
+          font-weight: 600;
+        }
+        &__label-color {
+          float: left;
+        }
+        &__text-area {
+          box-shadow: 1px 1px 1px inset;
+          width: 400px;
+          height: 130px;
+          resize: none;
+          overflow: scroll;
+          padding: 0 4px;
+        }
+        &__text-box {
+          padding: 0 4px;
+          box-shadow: 1px 1px 1px inset;
+        }
+        &__pass {
+          width: 80px;
+        }
+      }
+      .form-button {
+        border: 2px ridge #ccc;
+        background-color: #ddd;
+        padding: 2px 4px;
+        font-size: 14px;
+        font-family: 'ＭＳ Ｐ明朝','MS PMincho','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+        float: left;
+        margin: 4px 12px 4px 0;
+      }
+    }    
+  }
+  .pages {
+    padding: 8px 0;
+  }
+  .message-area {
+    .message {
+      &-header {
+        margin-bottom: 4px;
+      }
+      &-content {
+        font-size: 0.98em;
+        margin-left: 40px;
+      }
+    }
+  }
+}
